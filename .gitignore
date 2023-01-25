@@ -35,6 +35,9 @@
 *.out
 *.app
 
+# Other
+.idea/
+
 # CMake
 CMakeCache.txt
 cmake-build-debug/

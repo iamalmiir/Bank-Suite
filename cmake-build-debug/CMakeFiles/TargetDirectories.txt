@@ -1,3 +1,0 @@
-/home/iamalmiir/Developer/Bank-Suite/cmake-build-debug/CMakeFiles/Bank_Suite.dir
-/home/iamalmiir/Developer/Bank-Suite/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/iamalmiir/Developer/Bank-Suite/cmake-build-debug/CMakeFiles/rebuild_cache.dir
