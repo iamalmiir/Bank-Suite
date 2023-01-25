@@ -4,7 +4,6 @@
 
 #include "BankAccount.h"
 
-#include <utility>
 #include <iostream>
 
 using namespace std;
@@ -37,6 +36,7 @@ BankAccount::BankAccount(string_view fName,
 }
 
 void BankAccount::createAccount() {
+    system("clear");
     cout << "Account created successfully!" << endl;
 }
 
