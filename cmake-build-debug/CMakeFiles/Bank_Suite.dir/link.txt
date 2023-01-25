@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/Bank_Suite.dir/main.cpp.o -o Bank_Suite 
+/usr/bin/c++ -g CMakeFiles/Bank_Suite.dir/main.cpp.o CMakeFiles/Bank_Suite.dir/BankAccount.cpp.o -o Bank_Suite 

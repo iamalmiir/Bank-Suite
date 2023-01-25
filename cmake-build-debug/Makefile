@@ -129,6 +129,30 @@ Bank_Suite/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bank_Suite.dir/build.make CMakeFiles/Bank_Suite.dir/build
 .PHONY : Bank_Suite/fast
 
+BankAccount.o: BankAccount.cpp.o
+.PHONY : BankAccount.o
+
+# target to build an object file
+BankAccount.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bank_Suite.dir/build.make CMakeFiles/Bank_Suite.dir/BankAccount.cpp.o
+.PHONY : BankAccount.cpp.o
+
+BankAccount.i: BankAccount.cpp.i
+.PHONY : BankAccount.i
+
+# target to preprocess a source file
+BankAccount.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bank_Suite.dir/build.make CMakeFiles/Bank_Suite.dir/BankAccount.cpp.i
+.PHONY : BankAccount.cpp.i
+
+BankAccount.s: BankAccount.cpp.s
+.PHONY : BankAccount.s
+
+# target to generate assembly for a file
+BankAccount.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bank_Suite.dir/build.make CMakeFiles/Bank_Suite.dir/BankAccount.cpp.s
+.PHONY : BankAccount.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Bank_Suite"
+	@echo "... BankAccount.o"
+	@echo "... BankAccount.i"
+	@echo "... BankAccount.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

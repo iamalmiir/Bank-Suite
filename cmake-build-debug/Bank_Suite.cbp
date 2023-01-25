@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/iamalmiir/Developer/Bank-Suite/BankAccount.cpp">
+			<Option target="Bank_Suite"/>
+		</Unit>
+		<Unit filename="/home/iamalmiir/Developer/Bank-Suite/BankAccount.h">
+			<Option target="Bank_Suite"/>
+		</Unit>
 		<Unit filename="/home/iamalmiir/Developer/Bank-Suite/main.cpp">
 			<Option target="Bank_Suite"/>
 		</Unit>
