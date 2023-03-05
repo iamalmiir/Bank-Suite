@@ -5,6 +5,7 @@
 #include "BankAccount.h"
 
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -19,75 +20,75 @@ BankAccount::BankAccount(string_view fName,
                          string_view accountNum,
                          string_view type,
                          long double bal,
-                         bool current_status) {
-    this->firstName = fName;
-    this->lastName = lName;
-    this->address = std::move(address);
-    this->city = std::move(city);
-    this->state = std::move(state);
-    this->zipCode = std::move(zipcode);
-    this->email = std::move(email);
-    this->phoneNumber = std::move(phoneNum);
-    this->accountNumber = accountNum;
-    this->type = type;
-    this->balance = bal;
-    this->since = time(nullptr);
-    this->status = current_status;
+                         time_t since,
+                         bool current_status) : firstName{fName},
+                                                lastName{lName},
+                                                address{std::move(address)},
+                                                city{std::move(city)},
+                                                state{std::move(state)},
+                                                zipCode{std::move(zipcode)},
+                                                email{std::move(email)},
+                                                phoneNumber{std::move(phoneNum)},
+                                                accountNumber{accountNum},
+                                                type{type},
+                                                balance{bal},
+                                                since{since},
+                                                status{current_status} {
 }
 
 void BankAccount::createAccount() {
-    system("clear");
-    cout << "Account created successfully!" << endl;
+  system("clear");
+  cout << "Account created successfully!" << endl;
 }
 
 string_view BankAccount::getFirstName() {
-    return this->firstName;
+  return this->firstName;
 }
 
 string_view BankAccount::getLastName() {
-    return this->lastName;
+  return this->lastName;
 }
 
 string BankAccount::getAddress() {
-    return this->address;
+  return this->address;
 }
 
 string BankAccount::getCity() {
-    return this->city;
+  return this->city;
 }
 
 string BankAccount::getState() {
-    return this->state;
+  return this->state;
 }
 
 string BankAccount::getZipCode() {
-    return this->zipCode;
+  return this->zipCode;
 }
 
 string_view BankAccount::getAccountNumber() {
-    return this->accountNumber;
+  return this->accountNumber;
 }
 
 string_view BankAccount::getType() {
-    return this->type;
+  return this->type;
 }
 
 long double BankAccount::getBalance() {
-    return this->balance;
+  return this->balance;
 }
 
 bool BankAccount::getStatus() {
-    return this->status;
+  return this->status;
 }
 
 string BankAccount::getEmail() {
-    return this->email;
+  return this->email;
 }
 
 string BankAccount::getPhoneNum() {
-    return this->phoneNumber;
+  return this->phoneNumber;
 }
 
 string BankAccount::getSince() {
-    return ctime(&this->since);
+  return ctime(&this->since);
 }
