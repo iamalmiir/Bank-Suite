@@ -18,17 +18,9 @@ class BankAccount {
   // constructor function for creating a new bank account
   BankAccount(std::string_view,
               std::string_view,
-              const std::string &,
-              const std::string &,
-              const std::string &,
-              const std::string &,
-              std::string_view,
-              const std::string &,
               std::string_view,
               std::string_view,
-              long double bal,
-              const std::chrono::time_point<std::chrono::system_clock> &,
-              AccountStatus);
+              std::string_view);
 
   static void createAccount();
 
@@ -53,6 +45,7 @@ class BankAccount {
   void SetState(const std::optional<std::string> &state);
 
   [[nodiscard]] const std::optional<std::string> &GetZipCode() const;
+  
   void SetZipCode(const std::optional<std::string> &zip_code);
 
   [[nodiscard]] const std::string &GetEmail() const;

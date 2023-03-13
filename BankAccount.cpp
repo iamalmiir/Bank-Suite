@@ -16,30 +16,14 @@ using namespace std;
 // constructor function for creating a new bank account
 BankAccount::BankAccount(std::string_view fName,
                          std::string_view lName,
-                         const std::string &address,
-                         const std::string &city,
-                         const std::string &state,
-                         const std::string &zipcode,
                          std::string_view email,
-                         const std::string &phoneNum,
                          std::string_view accountNum,
-                         std::string_view type,
-                         long double bal,
-                         const std::chrono::time_point<std::chrono::system_clock> &since,
-                         AccountStatus current_status)
+                         std::string_view type)
     : firstName_{fName},
       lastName_{lName},
-      address_{address},
-      city_{city},
-      state_{state},
-      zipCode_{zipcode},
       email_{email},
-      phoneNumber_{phoneNum},
       accountNumber_{accountNum},
-      type_{type},
-      balance_{bal},
-      since_{since},
-      status_{current_status} {
+      type_{type} {
   createAccount();
 }
 
