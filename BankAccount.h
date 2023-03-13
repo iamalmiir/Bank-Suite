@@ -2,73 +2,99 @@
 // Created by Almir Redzematovic on 1/24/2023.
 //
 
-#ifndef BANK_SUITE__BANKACCOUNT_H_
-#define BANK_SUITE__BANKACCOUNT_H_
+#pragma once
 
-#include <iostream>
-#include <ctime>
+#include <string>
+#include <chrono>
+#include <optional>
 
-class BankAccount {
- private:
-  std::string_view firstName;     // first name of the account holder
-  std::string_view lastName;      // last name of the account holder
-  std::string address;            // address of the account holder
-  std::string city;               // city of the account holder
-  std::string state;              // state of the account holder
-  std::string zipCode;            // zip code of the account holder
-  std::string email;              // email address of the account holder
-  std::string phoneNumber;        // phone number of the account holder
-  std::string_view accountNumber; // account number
-  std::string_view type;          // account type
-  long double balance;            // current balance of the account
-  std::time_t since;              // account creation date
-  bool status;                    // status of the account (active or inactive)
-
- public:
-  // constructor function for creating a new bank account
-  explicit BankAccount(std::string_view,
-                       std::string_view,
-                       std::string,
-                       std::string,
-                       std::string,
-                       std::string,
-                       std::string,
-                       std::string,
-                       std::string_view,
-                       std::string_view,
-                       long double,
-                       std::time_t,
-                       bool);
-
-  // Create a new bank account
-  static void createAccount();
-  
-  // getter functions for the private member variables
-  std::string_view getFirstName();
-
-  std::string_view getLastName();
-
-  std::string getAddress();
-
-  std::string getCity();
-
-  std::string getState();
-
-  std::string getZipCode();
-
-  std::string_view getAccountNumber();
-
-  std::string_view getType();
-
-  long double getBalance();
-
-  bool getStatus();
-
-  std::string getEmail();
-
-  std::string getPhoneNum();
-
-  std::string getSince();
+enum class AccountStatus {
+  Active,
+  Inactive
 };
 
-#endif // BANK_SUITE__BANKACCOUNT_H_
+class BankAccount {
+ public:
+  // constructor function for creating a new bank account
+  BankAccount(std::string_view,
+              std::string_view,
+              const std::string &,
+              const std::string &,
+              const std::string &,
+              const std::string &,
+              std::string_view,
+              const std::string &,
+              std::string_view,
+              std::string_view,
+              long double bal,
+              const std::chrono::time_point<std::chrono::system_clock> &,
+              AccountStatus);
+
+  static void createAccount();
+
+  [[nodiscard]] const std::string &GetFirstName() const;
+
+  void SetFirstName(const std::string &first_name);
+
+  [[nodiscard]] const std::string &GetLastName() const;
+
+  void SetLastName(const std::string &last_name);
+
+  [[nodiscard]] const std::optional<std::string> &GetAddress() const;
+
+  void SetAddress(const std::optional<std::string> &address);
+
+  [[nodiscard]] const std::optional<std::string> &GetCity() const;
+
+  void SetCity(const std::optional<std::string> &city);
+
+  [[nodiscard]] const std::optional<std::string> &GetState() const;
+
+  void SetState(const std::optional<std::string> &state);
+
+  [[nodiscard]] const std::optional<std::string> &GetZipCode() const;
+  void SetZipCode(const std::optional<std::string> &zip_code);
+
+  [[nodiscard]] const std::string &GetEmail() const;
+
+  void SetEmail(const std::string &email);
+
+  [[nodiscard]] const std::optional<std::string> &GetPhoneNumber() const;
+
+  void SetPhoneNumber(const std::optional<std::string> &phone_number);
+
+  [[nodiscard]] const std::string &GetAccountNumber() const;
+
+  void SetAccountNumber(const std::string &account_number);
+
+  [[nodiscard]] const std::string &GetType() const;
+
+  void SetType(const std::string &type);
+
+  [[nodiscard]] long double GetBalance() const;
+
+  void SetBalance(long double balance);
+
+  [[nodiscard]] const std::chrono::time_point<std::chrono::system_clock> &GetSince() const;
+
+  void SetSince(const std::chrono::time_point<std::chrono::system_clock> &since);
+
+  [[nodiscard]] AccountStatus GetStatus() const;
+
+  void SetStatus(AccountStatus status);
+
+ private:
+  std::string firstName_;
+  std::string lastName_;
+  std::optional<std::string> address_;
+  std::optional<std::string> city_;
+  std::optional<std::string> state_;
+  std::optional<std::string> zipCode_;
+  std::string email_;
+  std::optional<std::string> phoneNumber_;
+  std::string accountNumber_;
+  std::string type_;
+  long double balance_ = 0.0;
+  std::chrono::time_point<std::chrono::system_clock> since_;
+  AccountStatus status_ = AccountStatus::Active;
+};
